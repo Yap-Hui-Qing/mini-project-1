@@ -1,0 +1,131 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 2.5em;
+    color: #373A40;
+}
+
+/* Form container */
+form {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    color: #373A40; 
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#cuisines .tag {
+    padding: 8px 12px;
+    font-size: 1em;
+    color: #555;
+    background-color: #FFF2C2;
+    border: 1px solid #FFF2C2;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+#cuisines .tag:hover {
+    background-color: #eff3ea;
+    color: #555;
+    border-color: #eff3ea;
+}
+
+#cuisines .tag.selected {
+    background-color: #D9DFC6;
+    color: #555;
+    border-color: #D9DFC6;
+}
+
+#diets .tag {
+    padding: 8px 12px;
+    font-size: 1em;
+    color: #555;
+    background-color: #FFD09B;
+    border: 1px solid #FFD09B;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+#diets .tag:hover {
+    background-color: #FFBD73;
+    color: #555;
+    border-color: #FFBD73;
+}
+
+#diets .tag.selected {
+    background-color: #FFB0B0;
+    color: #555;
+    border-color: #FFB0B0;
+}
+
+.form-check-input {
+    margin-right: 10px;
+}
+
+.form-check-label {
+    font-size: 1em;
+    font-weight: initial;
+    margin-right: 20px;
+    color: #555;
+}
+
+.form-control {
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.btn-primary {
+    background-color: #FFBB64;
+    border: none;
+    color: #555;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #FF9843;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+}

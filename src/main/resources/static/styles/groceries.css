@@ -1,0 +1,109 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    color: #4caf50;
+}
+
+.navbar-nav .nav-link {
+    color: #333;
+    font-size: 1rem;
+    padding: 12px 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #4caf50; /* Accent color for hover state */
+}
+
+.navbar .nav-link i {
+    margin-right: 8px;
+    font-size: 1.25rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #495057;
+}
+
+.grocery-list {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Styling the list group to have smooth edges and spacing */
+.list-group {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list-group-item {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0; /* Light border */
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.2s ease;
+}
+
+/* Hover effect for list items */
+.list-group-item:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Icon styling for the checkbox (before state) */
+.check-icon {
+    font-size: 1.6rem;
+    color: #6c757d;
+    transition: color 0.2s ease;
+    cursor: pointer;
+}
+
+/* When checked (active) state for checkbox icon */
+.list-group-item.checked .check-icon {
+    color: #28a745; /* Green color when checked */
+}
+
+/* Text styling for the grocery item */
+.list-group-item span {
+    flex: 1;
+    font-family: 'Helvetica', sans-serif;
+    color: #343a40;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+/* Make the grocery item text 'strikethrough' when checked */
+.list-group-item.checked span {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+/* Styling for the alert message if no groceries are found */
+.alert {
+    text-align: center;
+    font-size: 16px;
+    padding: 15px;
+}

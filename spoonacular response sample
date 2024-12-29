@@ -1,0 +1,405 @@
+{
+    "results": [
+        {
+            "vegetarian": false,
+            "vegan": false,
+            "glutenFree": true,
+            "dairyFree": true,
+            "veryHealthy": false,
+            "cheap": false,
+            "veryPopular": false,
+            "sustainable": false,
+            "lowFodmap": false,
+            "weightWatcherSmartPoints": 10,
+            "gaps": "no",
+            "preparationMinutes": null,
+            "cookingMinutes": null,
+            "aggregateLikes": 1,
+            "healthScore": 37,
+            "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+            "license": "CC BY 3.0",
+            "sourceName": "Foodista",
+            "pricePerServing": 157.24,
+            "id": 1096217,
+            "title": "Healthy Cabbage Soup with Spicy Kimchi",
+            "readyInMinutes": 35,
+            "servings": 4,
+            "sourceUrl": "https://www.foodista.com/recipe/P2M3MZS3/healthy-cabbage-soup-with-spicy-kimchi",
+            "image": "https://img.spoonacular.com/recipes/1096217-312x231.jpg",
+            "imageType": "jpg",
+            "summary": "Healthy Cabbage Soup with Spicy Kimchi might be just the main course you are searching for. One serving contains <b>346 calories</b>, <b>14g of protein</b>, and <b>20g of fat</b>. For <b>$1.57 per serving</b>, this recipe <b>covers 23%</b> of your daily requirements of vitamins and minerals. This recipe serves 4. This recipe from Foodista has 1 fans. It can be enjoyed any time, but it is especially good for <b>Autumn</b>. If you have garlic cloves, chicken bone broth, ground pork, and a few other ingredients on hand, you can make it. It is a good option if you're following a <b>gluten free and dairy free</b> diet. This recipe is typical of Korean cuisine. From preparation to the plate, this recipe takes about <b>35 minutes</b>. Taking all factors into account, this recipe <b>earns a spoonacular score of 77%</b>, which is solid. If you like this recipe, you might also like recipes such as <a href=\"https://spoonacular.com/recipes/spicy-cabbage-carrot-and-daikon-kimchi-11612\">Spicy Cabbage, Carrot and Daikon Kimchi</a>, <a href=\"https://spoonacular.com/recipes/kimchi-traditional-spicy-napa-cabbage-pickle-11763\">Kimchi (traditional Spicy Napa Cabbage Pickle)</a>, and <a href=\"https://spoonacular.com/recipes/kimchi-traditional-spicy-napa-cabbage-pickle-1246989\">Kimchi (traditional Spicy Napa Cabbage Pickle)</a>.",
+            "cuisines": [
+                "Korean",
+                "Asian"
+            ],
+            "dishTypes": [
+                "soup",
+                "lunch",
+                "main course",
+                "main dish",
+                "dinner"
+            ],
+            "diets": [
+                "gluten free",
+                "dairy free"
+            ],
+            "occasions": [
+                "fall",
+                "winter"
+            ],
+            "analyzedInstructions": [
+                {
+                    "name": "",
+                    "steps": [
+                        {
+                            "number": 1,
+                            "step": "In a large pot over medium heat, warm the coconut oil until melted.",
+                            "ingredients": [
+                                {
+                                    "id": 4047,
+                                    "name": "coconut oil",
+                                    "localizedName": "coconut oil",
+                                    "image": "oil-coconut.jpg"
+                                }
+                            ],
+                            "equipment": [
+                                {
+                                    "id": 404752,
+                                    "name": "pot",
+                                    "localizedName": "pot",
+                                    "image": "https://spoonacular.com/cdn/equipment_100x100/stock-pot.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "number": 2,
+                            "step": "Add the onion and cook until translucent, 4 to 6 minutes.",
+                            "ingredients": [
+                                {
+                                    "id": 11282,
+                                    "name": "onion",
+                                    "localizedName": "onion",
+                                    "image": "brown-onion.png"
+                                }
+                            ],
+                            "equipment": [],
+                            "length": {
+                                "number": 4,
+                                "unit": "minutes"
+                            }
+                        },
+                        {
+                            "number": 3,
+                            "step": "Add the ground pork and cook, breaking it up with a spoon, until browned, 8 to 10 minutes.",
+                            "ingredients": [
+                                {
+                                    "id": 10219,
+                                    "name": "ground pork",
+                                    "localizedName": "ground pork",
+                                    "image": "meat-ground.jpg"
+                                }
+                            ],
+                            "equipment": [],
+                            "length": {
+                                "number": 8,
+                                "unit": "minutes"
+                            }
+                        },
+                        {
+                            "number": 4,
+                            "step": "Add the garlic and ginger and cook for another minute.",
+                            "ingredients": [
+                                {
+                                    "id": 11215,
+                                    "name": "garlic",
+                                    "localizedName": "garlic",
+                                    "image": "garlic.png"
+                                },
+                                {
+                                    "id": 11216,
+                                    "name": "ginger",
+                                    "localizedName": "ginger",
+                                    "image": "ginger.png"
+                                }
+                            ],
+                            "equipment": []
+                        },
+                        {
+                            "number": 5,
+                            "step": "Add the cabbage. Then stir in the soy sauce, fish sauce, sesame oil and kimchi and kimchi juice.",
+                            "ingredients": [
+                                {
+                                    "id": 6179,
+                                    "name": "fish sauce",
+                                    "localizedName": "fish sauce",
+                                    "image": "asian-fish-sauce.jpg"
+                                },
+                                {
+                                    "id": 4058,
+                                    "name": "sesame oil",
+                                    "localizedName": "sesame oil",
+                                    "image": "sesame-oil.png"
+                                },
+                                {
+                                    "id": 16124,
+                                    "name": "soy sauce",
+                                    "localizedName": "soy sauce",
+                                    "image": "soy-sauce.jpg"
+                                },
+                                {
+                                    "id": 11109,
+                                    "name": "cabbage",
+                                    "localizedName": "cabbage",
+                                    "image": "cabbage.jpg"
+                                },
+                                {
+                                    "id": 98860,
+                                    "name": "kimchi",
+                                    "localizedName": "kimchi",
+                                    "image": "kimchi.png"
+                                },
+                                {
+                                    "id": 1019016,
+                                    "name": "juice",
+                                    "localizedName": "juice",
+                                    "image": "apple-juice.jpg"
+                                }
+                            ],
+                            "equipment": []
+                        },
+                        {
+                            "number": 6,
+                            "step": "Add the bone broth and bring to a boil. Reduce the heat to a simmer and cook, covered, until the cabbage is completely soft, 15 to 20 minutes.",
+                            "ingredients": [
+                                {
+                                    "id": 98904,
+                                    "name": "bone broth",
+                                    "localizedName": "bone broth",
+                                    "image": "chicken-broth.png"
+                                },
+                                {
+                                    "id": 11109,
+                                    "name": "cabbage",
+                                    "localizedName": "cabbage",
+                                    "image": "cabbage.jpg"
+                                }
+                            ],
+                            "equipment": [],
+                            "length": {
+                                "number": 15,
+                                "unit": "minutes"
+                            }
+                        },
+                        {
+                            "number": 7,
+                            "step": "Remove from the heat and garnish with the scallions.",
+                            "ingredients": [
+                                {
+                                    "id": 11291,
+                                    "name": "green onions",
+                                    "localizedName": "green onions",
+                                    "image": "spring-onions.jpg"
+                                }
+                            ],
+                            "equipment": []
+                        }
+                    ]
+                }
+            ],
+            "spoonacularScore": 80.56979370117188,
+            "spoonacularSourceUrl": "https://spoonacular.com/healthy-cabbage-soup-with-spicy-kimchi-1096217"
+        },
+        {
+            "vegetarian": false,
+            "vegan": false,
+            "glutenFree": false,
+            "dairyFree": true,
+            "veryHealthy": false,
+            "cheap": false,
+            "veryPopular": false,
+            "sustainable": false,
+            "lowFodmap": false,
+            "weightWatcherSmartPoints": 14,
+            "gaps": "no",
+            "preparationMinutes": null,
+            "cookingMinutes": null,
+            "aggregateLikes": 2,
+            "healthScore": 33,
+            "creditsText": "foodista.com",
+            "sourceName": "foodista.com",
+            "pricePerServing": 208.15,
+            "id": 641565,
+            "title": "Donkatsu - Korean Breaded Pork Cutlet",
+            "readyInMinutes": 30,
+            "servings": 4,
+            "sourceUrl": "https://www.foodista.com/recipe/BC6ZTT5G/donkatsu-korean-breaded-pork-cutlet",
+            "image": "https://img.spoonacular.com/recipes/641565-312x231.jpg",
+            "imageType": "jpg",
+            "summary": "Donkatsu - Korean Breaded Pork Cutlet is a Korean recipe that serves 4. Watching your figure? This dairy free recipe has <b>557 calories</b>, <b>38g of protein</b>, and <b>27g of fat</b> per serving. For <b>$2.08 per serving</b>, this recipe <b>covers 32%</b> of your daily requirements of vitamins and minerals. This recipe is liked by 2 foodies and cooks. It works best as a main course, and is done in about <b>30 minutes</b>. This recipe from Foodista requires pork chops, carrot, panko bread crumbs, and flour. Taking all factors into account, this recipe <b>earns a spoonacular score of 69%</b>, which is solid. If you like this recipe, you might also like recipes such as <a href=\"https://spoonacular.com/recipes/donkatsu-korean-breaded-pork-cutlet-1525683\">Donkatsu - Korean Breaded Pork Cutlet</a>, <a href=\"https://spoonacular.com/recipes/donkatsu-korean-breaded-pork-cutlet-1405557\">Donkatsu - Korean Breaded Pork Cutlet</a>, and <a href=\"https://spoonacular.com/recipes/breaded-chicken-cutlet-with-ham-triple-creme-cheese-and-baby-arugula-407470\">Breaded Chicken Cutlet with Ham, Triple Creme Cheese and Baby Arugula</a>.",
+            "cuisines": [
+                "Korean",
+                "Asian"
+            ],
+            "dishTypes": [
+                "lunch",
+                "main course",
+                "main dish",
+                "dinner"
+            ],
+            "diets": [
+                "dairy free"
+            ],
+            "occasions": [],
+            "analyzedInstructions": [
+                {
+                    "name": "",
+                    "steps": [
+                        {
+                            "number": 1,
+                            "step": "Trim off fat from pork chops (usually on the sides), then pound into thin pieces with tenderizer. Season with salt and pepper.Coat pork with flour, then beaten egg, and lastly panko bread crumbs.",
+                            "ingredients": [
+                                {
+                                    "id": 10018079,
+                                    "name": "panko",
+                                    "localizedName": "panko",
+                                    "image": "panko.jpg"
+                                },
+                                {
+                                    "id": 1102047,
+                                    "name": "salt and pepper",
+                                    "localizedName": "salt and pepper",
+                                    "image": "salt-and-pepper.jpg"
+                                },
+                                {
+                                    "id": 10010062,
+                                    "name": "pork chops",
+                                    "localizedName": "pork chops",
+                                    "image": "pork-chops.jpg"
+                                },
+                                {
+                                    "id": 20081,
+                                    "name": "all purpose flour",
+                                    "localizedName": "all purpose flour",
+                                    "image": "flour.png"
+                                },
+                                {
+                                    "id": 10010219,
+                                    "name": "pork",
+                                    "localizedName": "pork",
+                                    "image": "pork-tenderloin-raw.png"
+                                },
+                                {
+                                    "id": 1123,
+                                    "name": "egg",
+                                    "localizedName": "egg",
+                                    "image": "egg.png"
+                                }
+                            ],
+                            "equipment": []
+                        },
+                        {
+                            "number": 2,
+                            "step": "Heat vegetable oil in pan or skillet on medium heat.Fry until golden brown and cooked through (you can cut to check insides). Usually takes about 8-10 minutes total if fully submerged in oil.",
+                            "ingredients": [
+                                {
+                                    "id": 4669,
+                                    "name": "vegetable oil",
+                                    "localizedName": "vegetable oil",
+                                    "image": "vegetable-oil.jpg"
+                                },
+                                {
+                                    "id": 4582,
+                                    "name": "cooking oil",
+                                    "localizedName": "cooking oil",
+                                    "image": "vegetable-oil.jpg"
+                                }
+                            ],
+                            "equipment": [
+                                {
+                                    "id": 404645,
+                                    "name": "frying pan",
+                                    "localizedName": "frying pan",
+                                    "image": "https://spoonacular.com/cdn/equipment_100x100/pan.png"
+                                }
+                            ],
+                            "length": {
+                                "number": 10,
+                                "unit": "minutes"
+                            }
+                        },
+                        {
+                            "number": 3,
+                            "step": "Remove cutlets from the oil and drain on paper towel to remove excess oil and cool.",
+                            "ingredients": [
+                                {
+                                    "id": 4582,
+                                    "name": "cooking oil",
+                                    "localizedName": "cooking oil",
+                                    "image": "vegetable-oil.jpg"
+                                }
+                            ],
+                            "equipment": [
+                                {
+                                    "id": 405895,
+                                    "name": "paper towels",
+                                    "localizedName": "paper towels",
+                                    "image": "https://spoonacular.com/cdn/equipment_100x100/paper-towels.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "number": 4,
+                            "step": "Drain shredded cabbage well.",
+                            "ingredients": [
+                                {
+                                    "id": 11109,
+                                    "name": "cabbage",
+                                    "localizedName": "cabbage",
+                                    "image": "cabbage.jpg"
+                                }
+                            ],
+                            "equipment": []
+                        },
+                        {
+                            "number": 5,
+                            "step": "Cut each cutlet into small pieces and serve on plate with cabbage slaw.",
+                            "ingredients": [
+                                {
+                                    "id": 11109,
+                                    "name": "cabbage",
+                                    "localizedName": "cabbage",
+                                    "image": "cabbage.jpg"
+                                }
+                            ],
+                            "equipment": []
+                        },
+                        {
+                            "number": 6,
+                            "step": "Serve with katsu sauce for dipping and serve with rice.",
+                            "ingredients": [
+                                {
+                                    "id": 98997,
+                                    "name": "katsu sauce",
+                                    "localizedName": "katsu sauce",
+                                    "image": "dark-sauce.jpg"
+                                },
+                                {
+                                    "id": 20444,
+                                    "name": "rice",
+                                    "localizedName": "rice",
+                                    "image": "uncooked-white-rice.png"
+                                }
+                            ],
+                            "equipment": []
+                        }
+                    ]
+                }
+            ],
+            "spoonacularScore": 80.29762268066406,
+            "spoonacularSourceUrl": "https://spoonacular.com/donkatsu-korean-breaded-pork-cutlet-641565"
+        }
+    ],
+    "offset": 0,
+    "number": 100,
+    "totalResults": 2
+}

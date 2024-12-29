@@ -1,0 +1,284 @@
+body {
+    background-color: #faf9f6;
+    /* Light neutral background */
+    font-family: 'Poppins', sans-serif;
+    /* Modern sans-serif font */
+    color: #333;
+    /* Dark text for readability */
+    padding-bottom: 100px;
+    /* Ensure space for sticky button */
+}
+
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    color: #4caf50;
+}
+
+.navbar-nav .nav-link {
+    color: #333;
+    font-size: 1rem;
+    padding: 12px 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #4caf50;
+    /* Accent color for hover state */
+}
+
+.navbar .nav-link i {
+    margin-right: 8px;
+    font-size: 1.25rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #34495E;
+    /* Green for welcoming feel */
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+/* Meal Plan Section */
+.meal-plan {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.remove-btn {
+    background-color: #dc3545;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
+}
+
+.remove-btn i {
+    color: white;
+    font-size: 14px;
+}
+
+.remove-btn:focus {
+    outline: none;
+}
+
+/* Title */
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+}
+
+/* Recipe Card Container */
+.recipe-card {
+    position: relative;
+    background-color: #FFF;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Hover Effect */
+.recipe-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Recipe Image */
+.recipe-image {
+    width: auto;
+    /* Make the image its original size */
+    height: auto;
+    /* Maintain the aspect ratio */
+    max-width: 100%;
+    /* Ensure the image does not overflow the card */
+    border-radius: 16px;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    /* Center the image */
+    margin-right: auto;
+    /* Center the image */
+}
+
+/* Recipe Title */
+.recipe-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #34495E;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Start Your Next Meal Plan Button */
+.btn-start {
+    display: inline-block;
+    background-color: #A5BFCC;
+    color: gray;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 12px 25px;
+    margin-top: 30px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+    /* Restrict the max width to prevent it from being too wide */
+    margin-left: auto;
+    margin-right: auto;
+    /* Center align the button */
+    display: block;
+    /* Ensure it is treated as a block element */
+}
+
+/* Start Button Hover */
+.btn-start:hover {
+    background-color: #7E99A3;
+    color: #555;
+}
+
+/* Flexbox for Button Centering */
+.meal-plan .btn-start {
+    display: block;
+    /* Block display to make it take full width */
+    margin: 30px auto 0 auto;
+    /* Center the button horizontally */
+}
+
+.btn-browse {
+    display: inline-block;
+    background-color: #DCE4C9;
+    color: gray;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 12px 25px;
+    margin-top: 30px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+    /* Restrict the max width to prevent it from being too wide */
+    margin-left: auto;
+    margin-right: auto;
+    /* Center align the button */
+    display: block;
+    /* Ensure it is treated as a block element */
+}
+
+/* Start Button Hover */
+.btn-browse:hover {
+    background-color: #a8c89f;
+    color: #555;
+}
+
+/* Flexbox for Button Centering */
+.meal-plan .btn-browse {
+    display: block;
+    /* Block display to make it take full width */
+    margin: 30px auto 0 auto;
+    /* Center the button horizontally */
+}
+
+/* Empty State */
+#empty-meal-plan {
+    background-color: #fff3e0;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#empty-meal-plan h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ff7043;
+}
+
+#empty-meal-plan p {
+    color: #ff5722;
+    font-size: 1.1rem;
+}
+
+#empty-meal-plan .btn-browse {
+    background-color: #DCE4C9;
+    color: #555;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#empty-meal-plan .btn-browse:hover {
+    background-color: #a8c89f;
+    color: #333;
+    border-radius: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .add-btn {
+        top: 10px;
+        right: 10px;
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    .meal-plan {
+        padding: 15px;
+        /* Slightly less padding on smaller screens */
+    }
+
+    /* Recipe Image */
+    .recipe-image {
+        max-height: 300px;
+        /* Ensure the image fits better on smaller screens */
+    }
+
+    .btn-start {
+        font-size: 1rem;
+        padding: 10px 20px;
+        max-width: 300px;
+        /* Adjust the max-width for smaller screens */
+    }
+}

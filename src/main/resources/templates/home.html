@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meal Plan</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="/styles/home.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <a class="navbar-brand">
+      <i class="fas fa-utensils"></i>
+      PrepEase
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link">
+            <i class="fas fa-concierge-bell"></i> Meal Plan
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-th-href="@{/{username}/groceries (username = ${username})}">
+            <i class="fas fa-shopping-basket"></i> Groceries
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-th-href="@{/{username}/favourites (username = ${username})}">
+            <i class="fas fa-cog"></i> Favourites
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <h1>Hello <span data-th-text="${username}"></span>!</h1>
+
+  <!-- Conditional Empty State Message -->
+  <div id="empty-meal-plan" class="text-center py-5" data-th-if="${#lists.isEmpty(recipes)}">
+    <h3>Your meal plan is empty!</h3>
+    <p class="mb-4">Browse a variety of recipes based on your preferences and start adding meals!</p>
+    <!-- Browse Recipes Button -->
+    <a href="/browse" class="btn btn-browse">
+      Browse Recipes
+    </a>
+  </div>
+
+  <!-- Meal Plan Cards -->
+  <div class="meal-plan container py-4" data-th-unless="${#lists.isEmpty(recipes)}">
+    <h1 class="title">Meal Plan</span>
+    </h1>
+    <div class="row" data-th-each="recipe : ${recipes}" data-th-object="${recipe}">
+      <!-- Recipe Card -->
+      <div class="col-12 col-md-4 mb-4">
+        <div class="recipe-card position-relative">
+          <button class="btn btn-sm remove-btn"
+            data-th-href="@{/remove/{username}/{id}(username = ${username}, id = *{id})}">
+            <i class="fas fa-trash"></i>
+          </button>
+          <a data-th-href="@{/mealRecipeDetails/{id} (id = *{id})}">
+            <img data-th-src="*{imageUrl}" class="recipe-image" alt="Recipe image" style="width: 100%; height: auto;">
+          </a>
+          <h2 class="recipe-title"><span data-th-text="*{title} + ' (ID: ' + *{id} + ')'"></span></h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start and Browse Buttons in the Same Row -->
+    <div class="d-flex justify-content-between mt-4">
+      <a data-th-href="@{/{username}/newPlan (username = ${username})}" class="btn btn-start">
+        Start Your Next Meal Plan
+      </a>
+      <a href="/browse" class="btn btn-browse">
+        Add another recipe
+      </a>
+    </div>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script th:inline="javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+
+      const addButtons = document.querySelectorAll('.remove-btn');
+
+      addButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+          event.preventDefault(); // Prevent the default button action
+
+          // Get the URL from the href attribute (or data-th-href)
+          const url = button.getAttribute('href');
+
+          const recipes = button.closest('.recipe-card');
+          // Print out the URL
+          console.log(url);
+          console.log(recipes);
+
+          fetch(url)
+            .then(response => response.json())
+            .then(data => {
+              showAlert(data.message);
+
+              if (data.message.includes('removed')) {
+                recipes.remove();
+              }
+            })
+            .catch(error => {
+              console.error('Error removing recipe from meal plan:', error);
+            });
+        });
+      });
+
+      // Function to display the alert message
+      function showAlert(message) {
+        alert(message);
+      }
+    });
+  </script>
+
+</body>
+
+</html>

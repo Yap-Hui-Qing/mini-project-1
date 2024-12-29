@@ -1,0 +1,106 @@
+
+/* Hero Section */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('/background.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+}
+
+
+.jumbotron {
+    background-color: #f9f9f9;
+    padding: 3rem 2rem;
+    margin-bottom: 0;
+}
+
+.jumbotron .container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.85); 
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+}
+
+/* Main container for your login page */
+/*
+.container {
+    background-color: rgba(255, 255, 255, 0.85); 
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+}
+*/
+
+/* Title - Dark Green */
+h1 {
+    color: #2F4F2F; 
+    font-size: 2.5em;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Inputs */
+input {
+    background-color: #f1f1f1; 
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 15px;
+    color: #2F4F2F; 
+}
+
+/* Button Styles */
+button[type="submit"].btn {
+    background-color: #FF9B9B; 
+    border: none; 
+    color: #2F4F2F;
+    padding: 8px 20px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    width: 100%; 
+    cursor: pointer;
+}
+
+button[type="submit"].btn:hover {
+    background-color: #FF9B9B; 
+    color: #2F4F2F; 
+    border: none; 
+}
+
+/* Link Styles */
+a {
+    color: #FF9B9B; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for links */
+a:hover {
+    color: #2F4F2F; 
+}
+
+/* Form Label */
+label {
+    color: #2F4F2F; 
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/*validation errors */
+.text-bg-danger {
+    color: #e74c3c;
+}
+

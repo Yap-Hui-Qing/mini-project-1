@@ -1,0 +1,345 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFF;
+    margin: 0;
+    padding: 0;
+    color: #2C3E50;
+}
+
+/* Breadcrumb Container */
+.breadcrumb-container {
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    z-index: 100;
+    margin-bottom: 20px;
+}
+
+/* Breadcrumb List Style */
+.breadcrumb {
+    display: flex;
+    background: none;
+    padding: 0;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Breadcrumb Item */
+.breadcrumb-item {
+    margin-right: 10px;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: #0056b3;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
+}
+
+.breadcrumb-item i {
+    margin-right: 5px;
+    /* Space between icon and text */
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+/* Clear Search Button */
+.clear-search-btn {
+    background-color: white;
+    color: #555;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Clear Search Button */
+.clear-search-btn {
+    background-color: white;
+    color: #555;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/*Heading */
+h2 {
+    font-size: 2.5rem;
+    color: #34495E;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Category Title */
+.category-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+}
+
+/* Recipe Card Container */
+.recipe-card {
+    position: relative;
+    background-color: #FFF;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;
+    height: 100%;
+}
+
+/* Hover Effect */
+.recipe-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Recipe Image */
+.recipe-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 10px;
+}
+
+/* Recipe Title */
+.recipe-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #34495E;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.button-container {
+    position: absolute;
+    top: 10px; /* Adjust this value to position buttons as needed */
+    right: 10px; /* Align the buttons to the right side */
+    display: flex;
+    flex-direction: column; /* Stack the buttons vertically */
+    gap: 10px; /* Space between buttons */
+}
+
+/* Add Button */
+.add-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #FFFFFF;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #F0F0F0;
+    transform: scale(1.1);
+}
+
+.remove-btn {
+    background-color: #dc3545;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
+}
+
+.remove-btn i {
+    color: white;
+    font-size: 14px;
+}
+
+.remove-btn:focus {
+    outline: none;
+}
+
+.no-results-message {
+    background-color: #f8f9fa; /* Light gray background */
+    border-radius: 8px; /* Rounded corners for a soft look */
+    padding: 40px 20px; /* Adds space around the content */
+    margin: 40px 0; /* Adds margin at the top and bottom */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.no-results-message h3 {
+    font-size: 24px; /* Increase font size for the title */
+    font-weight: 600; /* Bold text */
+    color: #6c757d; /* Muted color for the heading */
+}
+
+.no-results-message p {
+    font-size: 16px; /* Set a comfortable font size for the paragraph */
+    color: #495057; /* Slightly darker gray for readability */
+    margin-bottom: 20px; /* Adds space below the paragraph */
+}
+
+.btn-browse {
+    display: inline-block;
+    background-color: #DCE4C9;
+    color: gray;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 12px 25px;
+    margin-top: 30px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+    /* Restrict the max width to prevent it from being too wide */
+    margin-left: auto;
+    margin-right: auto;
+    /* Center align the button */
+    display: block;
+    /* Ensure it is treated as a block element */
+}
+
+/* Start Button Hover */
+.btn-browse:hover {
+    background-color: #a8c89f;
+    color: #555;
+}
+
+/* Recipe Section */
+.recipe-section {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.col {
+    flex: 1 1 calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px);
+    box-sizing: border-box;
+}
+
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1051;
+    /* Make sure the toast container is above other elements */
+    padding: 10px;
+}
+
+.toast {
+    min-width: 250px;
+    max-width: 350px;
+    background-color: #28a745;
+    /* Green background for success */
+    color: white;
+    font-size: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.toast-body {
+    padding: 10px;
+}
+
+.toast .btn-close {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    background: transparent;
+}
+
+.toast.success {
+    background-color: #28a745;
+}
+
+.toast.error {
+    background-color: #dc3545;
+}
+
+.toast.warning {
+    background-color: #ffc107;
+}
+
+.toast.info {
+    background-color: #17a2b8;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adjust for Medium Screens (2 Cards per Row) */
+@media (max-width: 1200px) {
+    .col {
+        flex: 1 1 calc(50% - 20px);
+        /* 50% width for 2 cards per row */
+    }
+}
+
+/* Adjust for Small Screens (1 Card per Row) */
+@media (max-width: 768px) {
+    .col {
+        flex: 1 1 100%;
+        /* 100% width for 1 card per row */
+    }
+}

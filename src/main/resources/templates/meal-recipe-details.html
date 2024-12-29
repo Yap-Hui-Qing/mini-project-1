@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Recipe Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/recipe-details.css">
+</head>
+
+<body>
+
+    <div class="breadcrumb-container">
+        <a data-th-href="@{/{username}/home (username = ${username})}" class="btn btn-outline">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        <a class="btn btn-sm btn-remove"
+            data-th-href="@{/cooked/{username}/{id}(username = ${username}, id = *{id})}">
+            <i class="fas fa-check"></i>
+        </a>
+    </div>
+
+    <!-- Recipe Image and Title -->
+    <div class="text-center mb-4" data-th-object="${recipe}">
+        <img data-th-src="*{imageUrl}" alt="Recipe Image" class="recipe-image" />
+        <h1 class="recipe-title" data-th-text="${title}">
+            <button class="favourite-btn">
+                <i class="bi bi-heart"></i>
+            </button>
+        </h1>
+        <p class="recipe-meta">
+            <i class="bi bi-clock"></i><span data-th-text="*{readyInMinutes}"></span> minutes &middot;
+            <i class="bi bi-person-fill"></i><span data-th-text="*{servings}"></span> servings
+        </p>
+    </div>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs mb-4" role="tablist">
+        <li class="nav-item">
+            <button class="nav-link active" id="ingredients-tab" data-bs-toggle="tab" data-bs-target="#ingredients"
+                type="button" role="tab" aria-controls="ingredients" aria-selected="true">
+                Ingredients
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" id="instructions-tab" data-bs-toggle="tab" data-bs-target="#instructions"
+                type="button" role="tab" aria-controls="instructions" aria-selected="false">
+                Instructions
+            </button>
+        </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content" data-th-object="${recipe}">
+        <!-- Ingredients Tab -->
+        <div class="tab-pane fade show active" id="ingredients" role="tabpanel" aria-labelledby="ingredients-tab">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" data-th-each="ingredient : *{ingredients}">
+                    <i class="bi bi-dot"></i> <span data-th-text="${ingredient}"></span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Instructions Tab -->
+        <div class="tab-pane fade" id="instructions" role="tabpanel" aria-labelledby="instructions-tab">
+            <ol class="list-group list-group-numbered">
+                <li class="list-group-item" data-th-each="instruction : *{instructions}">
+                    <span data-th-text="${instruction}"></span>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

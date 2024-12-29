@@ -1,0 +1,200 @@
+ 
+ /* Back and Add to Meal Plan Buttons (Breadcrumb-like style) */
+ .breadcrumb-container {
+    position: sticky; /* Make it sticky */
+    top: 0; /* Stick to the top of the page */
+    background-color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Ensure it stays above other content */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.breadcrumb-container .btn {
+    font-size: 1.1rem;
+    border-radius: 30px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline {
+    background-color: #D9CAB3; 
+    color: #555; 
+    border: 2px solid #D9CAB3; 
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: #B39A6A; 
+    color: #fff; 
+    border-color: #B39A6A; 
+    transform: translateY(-2px); 
+}
+
+.favourite-btn {
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    cursor: pointer; /* Make it clickable */
+    padding: 0; /* Remove any padding */
+}
+
+/* Style the heart icon when it is not filled */
+.favourite-btn i {
+    font-size: 2rem; /* Make the heart icon larger */
+    color: #d3d3d3; /* Set the default color to light gray (unfilled heart) */
+    transition: color 0.3s ease; /* Add smooth transition for color change */
+}
+
+/* Style the heart icon when it is filled */
+.favourite-btn i.bi-heart-fill {
+    color: red; /* Set the color to red when filled */
+}
+
+.btn-remove {
+    background-color: #28a745; 
+    color: #555; 
+    border: none; 
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-remove:hover {
+    background-color: #218838; 
+    color: #fff; 
+    transform: translateY(-2px); 
+}
+
+.btn-add {
+    background-color: #D8D2C2; 
+    color: #555; 
+    border: none; 
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-add:hover {
+    background-color: #B0A694; 
+    color: #fff; 
+    transform: translateY(-2px); 
+}
+
+/* Home Button Styling */
+.btn-home {
+    background-color: #F4E1B2; 
+    color: #555; 
+    border: 2px solid #F4E1B2; 
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-home:hover {
+    background-color: #F1D27B; 
+    color: #fff; 
+    border-color: #F1D27B; 
+    transform: translateY(-2px); 
+}
+
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1051; /* Make sure the toast container is above other elements */
+    padding: 10px;
+}
+
+.toast {
+    min-width: 250px;
+    max-width: 350px;
+    background-color: #28a745; 
+    color: white;
+    font-size: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.toast-body {
+    padding: 10px;
+}
+
+.toast .btn-close {
+    font-size: 1.5rem;    
+    font-weight: bold;    
+    color: #fff;          
+    border: none;         
+    background: transparent;
+}
+
+.toast.success {
+    background-color: #28a745;
+}
+
+.toast.error {
+    background-color: #dc3545;
+}
+
+.toast.warning {
+    background-color: #ffc107;
+}
+
+.toast.info {
+    background-color: #17a2b8;
+}
+
+/* Recipe Title */
+.recipe-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Recipe Meta */
+.recipe-meta {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-top: 10px;
+}
+
+.recipe-meta i {
+    margin-right: 5px;
+}
+
+/* Styling for Recipe Image */
+.recipe-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Adjustments for Small Screens */
+@media (max-width: 768px) {
+    .breadcrumb-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .breadcrumb {
+        margin-bottom: 15px;
+    }
+}

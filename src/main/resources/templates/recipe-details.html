@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/recipe-details.css">
+</head>
+
+<body>
+
+    <!-- Back Button and Add to Meal Plan (Breadcrumb-style) -->
+    <div class="breadcrumb-container">
+        <a href="/searchrecipes" class="btn btn-outline">
+            <i class="bi bi-arrow-left-circle"></i> Back to search results
+        </a>
+        <a data-th-href="@{/{username}/home (username=${username})}" class="btn btn-home">
+            <i class="bi bi-house-door"></i> Home
+        </a>
+        <button class="btn btn-add px-4"
+            data-th-href="@{/addToPlan/{username}/{id} (username = ${username}, id = *{id})}">Add to Meal Plan</button>
+    </div>
+
+    <!-- Recipe Image and Title -->
+    <div class="text-center mb-4" data-th-object="${recipe}">
+        <img data-th-src="*{imageUrl}" alt="Recipe Image" class="recipe-image" />
+        <h1 class="recipe-title">
+            <span data-th-text="${title}"></span>
+            <button class="favourite-btn"
+                data-th-href="@{/addToFavourite/{username}/{id} (username = ${username}, id = *{id})}">
+                <i class="bi" th:classappend="${isFavourite} == true ? 'bi-heart-fill' : 'bi-heart'"></i>
+            </button>
+        </h1>
+        <p class="recipe-meta">
+            <i class="bi bi-clock"></i><span data-th-text="*{readyInMinutes}"></span> minutes &middot;
+            <i class="bi bi-person-fill"></i><span data-th-text="*{servings}"></span> servings
+        </p>
+    </div>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs mb-4" role="tablist">
+        <li class="nav-item">
+            <button class="nav-link active" id="ingredients-tab" data-bs-toggle="tab" data-bs-target="#ingredients"
+                type="button" role="tab" aria-controls="ingredients" aria-selected="true">
+                Ingredients
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" id="instructions-tab" data-bs-toggle="tab" data-bs-target="#instructions"
+                type="button" role="tab" aria-controls="instructions" aria-selected="false">
+                Instructions
+            </button>
+        </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content" data-th-object="${recipe}">
+        <!-- Ingredients Tab -->
+        <div class="tab-pane fade show active" id="ingredients" role="tabpanel" aria-labelledby="ingredients-tab">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" data-th-each="ingredient : *{ingredients}">
+                    <i class="bi bi-dot"></i> <span data-th-text="${ingredient}"></span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Instructions Tab -->
+        <div class="tab-pane fade" id="instructions" role="tabpanel" aria-labelledby="instructions-tab">
+            <ol class="list-group list-group-numbered">
+                <li class="list-group-item" data-th-each="instruction : *{instructions}">
+                    <span data-th-text="${instruction}"></span>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="position-fixed top-0 end-0 p-3">
+        <!-- Toasts will be dynamically added here -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script th:inline="javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            // Add event listeners to all "Add to Plan" buttons
+            const addButtons = document.querySelectorAll('.btn-add');
+            const favouriteButtons = document.querySelectorAll('.favourite-btn');
+
+            // Handle "Add to Plan" button clicks
+            addButtons.forEach(button => {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent the default button action
+
+                    const url = button.getAttribute('href'); // Get the URL from href attribute
+                    console.log(url);
+
+                    // Make the AJAX request to add the recipe to the plan
+                    fetch(url)
+                        .then(response => response.json())
+                        .then(data => {
+                            // Show success toast message
+                            showToast(data.message);
+                        })
+                        .catch(error => {
+                            console.error('Error adding recipe to meal plan:', error);
+                        });
+                });
+            });
+
+            // Handle "Add to Favourites" button clicks
+            favouriteButtons.forEach(favouriteButton => {
+                const heartIcon = favouriteButton.querySelector('i');
+                favouriteButton.addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent the default link behavior
+
+                    const url = favouriteButton.getAttribute('href'); // Get the URL from href attribute
+                    console.log(url);
+
+                    // Send the request to update the favourite state
+                    fetch(url, { method: 'GET' })
+                        .then(response => response.json())
+                        .then(data => {
+                            // Show the success message (could use Toast or alert)
+                            alert(data.message);
+
+                            // Update the heart icon based on the response (isFavourite)
+                            if (data.isFavourite) {
+                                heartIcon.classList.remove('bi-heart');
+                                heartIcon.classList.add('bi-heart-fill');
+                            } else {
+                                heartIcon.classList.remove('bi-heart-fill');
+                                heartIcon.classList.add('bi-heart');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error adding to favourites:', error);
+                            alert('There was an error while adding the recipe to favourites.');
+                        });
+                });
+            });
+
+            // Function to display the toast message
+            function showToast(message) {
+                const toastContainer = document.getElementById('toast-container');
+
+                // Create a new toast element
+                const toast = document.createElement('div');
+                toast.classList.add('toast', 'align-items-center', 'text-bg-success', 'border-0');
+                toast.setAttribute('role', 'alert');
+                toast.setAttribute('aria-live', 'assertive');
+                toast.setAttribute('aria-atomic', 'true');
+                toast.innerHTML = `
+                <div class="d-flex">
+                    <div class="toast-body">
+                        ${message}
+                    </div>
+                    <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close">x</button>
+                </div>
+            `;
+
+                // Append the toast to the container
+                toastContainer.appendChild(toast);
+
+                // Initialize and show the toast
+                const bsToast = new bootstrap.Toast(toast);
+                bsToast.show();
+
+                // Optionally remove the toast after a few seconds
+                setTimeout(() => {
+                    toastContainer.removeChild(toast);
+                }, 5000);
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Recipes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/recipes.css">
+</head>
+
+<body>
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumb-container d-flex align-items-center justify-content-between mb-4">
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item">
+                <a class="text-decoration-none" data-th-href="@{/{username}/home (username=${username})}">
+                    <i class="bi bi-house-door"></i> Home
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                Browse Recipes
+            </li>
+        </ol>
+        <a href="/browse" class="clear-search-btn">Clear Search</a>
+    </nav>
+
+    <div class="container py-5">
+        <!-- No Results Message -->
+        <div data-th-if="${#lists.isEmpty(recipeSearch)}" class="no-results-message text-center py-4">
+            <h3>Your search produced no results</h3>
+            <p>Try modifying your search filters.</p>
+        </div>
+
+        <!-- Recipes Section -->
+        <div class="recipe-section container py-4" data-th-unless="${#lists.isEmpty(recipeSearch)}">
+            <h1 class="category-title">Discover Recipes</span></h1>
+            <div class="row" data-th-each="recipe : ${recipeSearch}" data-th-object="${recipe}">
+                <!-- recipe card -->
+                <div class="col">
+                    <div class="recipe-card">
+                        <a data-th-href="@{/recipeDetails/{id} (id = *{id})}">
+                            <img data-th-src="*{imageUrl}" class="recipe-image" alt="Recipe image">
+                        </a>
+                        <button class="add-btn" data-th-href="@{/addToPlan/{username}/{id} (username = ${username}, id = *{id})}">
+                            +
+                        </button>
+                        <h2 class="recipe-title"><span data-th-text="*{title} + ' (ID: ' + *{id} + ')'"></span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="position-fixed top-0 end-0 p-3">
+        <!-- Toasts will be dynamically added here -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script th:inline="javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add event listeners to all "Add to Plan" buttons
+            const addButtons = document.querySelectorAll('.add-btn');
+
+            addButtons.forEach(button => {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent the default button action
+
+                    // Get the URL from the data-th-href attribute
+                    // const url = button.getAttribute('data-th-href');
+                    const url = button.getAttribute('href');
+
+                    // Print out the url
+                    console.log(url);
+
+                    // Make the AJAX request to add the recipe to the plan
+                    fetch(url)
+                        .then(response => response.json())
+                        .then(data => {
+                            // Show success toast message
+                            showToast(data.message);
+                        })
+                        .catch(error => {
+                            console.error('Error adding recipe to meal plan:', error);
+                        });
+                });
+            });
+
+            // Function to display the toast message
+            function showToast(message) {
+                const toastContainer = document.getElementById('toast-container');
+
+                // Create a new toast element
+                const toast = document.createElement('div');
+                toast.classList.add('toast', 'align-items-center', 'text-bg-success', 'border-0');
+                toast.setAttribute('role', 'alert');
+                toast.setAttribute('aria-live', 'assertive');
+                toast.setAttribute('aria-atomic', 'true');
+                toast.innerHTML = `
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            ${message}
+                        </div>
+                        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close">x</button>
+                    </div>
+                `;
+
+                // Append the toast to the container
+                toastContainer.appendChild(toast);
+
+                // Initialize and show the toast
+                const bsToast = new bootstrap.Toast(toast);
+                bsToast.show();
+
+                // Optionally remove the toast after a few seconds
+                setTimeout(() => {
+                    toastContainer.removeChild(toast);
+                }, 5000);
+            }
+        });
+    </script>
+
+</body>
+
+</html>
